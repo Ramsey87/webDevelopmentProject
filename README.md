@@ -1,5 +1,51 @@
 
 
+  - [learn JavaScript](#learn-javascript)
+  - [ExpressJS](#express-js---todo-to-be-comleted)
+  - [Section 30: Build your own API](#section-30-build-your-own-api)
+  
+
+
+# learn JavaScript
+## how to create an Object
+1. **Object Literal**: You can define an object using object literal notation by enclosing key-value pairs within curly braces {}:
+    ```
+    let person = {
+        name: 'John',
+        age: 30,
+        isStudent: false
+    };
+    ```
+2. Using the **Object Constructor**: You can also create an object using the Object constructor:
+   
+    ```
+   let person = new Object();
+    person.name = 'John';
+    person.age = 30;
+    person.isStudent = false;
+   ```
+
+3. Using a **Constructor Function**: You can define a constructor function and then create objects using the new keyword:
+    ```
+    function Person(name, age, isStudent) {
+        this.name = name;
+        this.age = age;
+        this.isStudent = isStudent;
+    }
+    let person = new Person('John', 30, false);
+    ```
+
+
+# Express JS - TODO: To be comleted
++ Useful resources
+  + [body-parser](https://www.npmjs.com/package/body-parser): Node.js body parsing middleware.
+
++ **Middleware** in the context of web development, particularly in frameworks like Express.js for Node.js, refers to ***functions that have access*** to the request object (req), the response object (res), and the next middleware function in the application's request-response cycle.
++ following line of code is used to use bodyParser middleware in express.js. `app.use()` is usedto mount middleware .
+    ```
+    app.use(bodyParser.urlencoded({ extended: true }));
+    ```
+
 
 # Section 30: Build your own API
 + useful resources
@@ -72,3 +118,85 @@ app.get("/filter", (req, res) => {
 + Array.prototype.filter()
 >The filter() method of Array instances creates a shallow copy of a portion of a given array, filtered down to just the elements from the given array that pass the test implemented by the provided function.
 ---
+#### Post a new Joke
+```
+app.post("/jokes", (req, res) => {
+  const newJoke = {
+    id: jokes.length + 1,
+    jokeText: req.body.text,
+    jokeType: req.body.type,
+  };
+  jokes.push(newJoke);
+  console.log(jokes.slice(-1));
+  res.json(newJoke);
+});
+```
++ since ou data is stored in array of objects, we create an object and push it to the array.
++ we are passing data using ***body >> x-www.form-urlencoded*** in postman. to read this we will be using `req.body.text`
++ **Array.prototype.slice()**: This is an array method in JavaScript that returns a shallow copy of a portion of an array into a new array object.The argument ***-1*** passed to the slice() method indicates that you want to start slicing the array from the end, counting backward from the last element.
+---
+#### Put a Joke
+```
+app.put("/jokes/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const replacementJoke = {
+    id: id,
+    jokeText: req.body.text,
+    jokeType: req.body.type,
+  };
+
+  const searchIndex = jokes.findIndex((joke) => joke.id === id);
+
+  jokes[searchIndex] = replacementJoke;
+  // console.log(jokes);
+  res.json(replacementJoke);
+});
+```
++ **PUT** requests are used to update or replace an existing resource ***entirely*** with the data provided in the request payload.
++ **parseInt()**: parses a string argument and returns an integer
++ **Array.findIndex()**:returns the index of the first element in an array that satisfies the provided testing function
+---
+#### Patch a Joke
+```
+app.patch("/jokes/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const existingJoke = jokes.find((joke) => joke.id === id);
+  const replacementJoke = {
+    id: id,
+    jokeText: req.body.text || existingJoke.jokeText,
+    jokeType: req.body.type || existingJoke.jokeType,
+  };
+  const searchIndex = jokes.findIndex((joke) => joke.id === id);
+  jokes[searchIndex] = replacementJoke;
+  console.log(jokes[searchIndex]);
+  res.json(replacementJoke);
+});
+```
++  **PATCH** requests are used to apply ***partial modifications*** to an existing resource. It's used when you want to update specific fields or properties of a resource without necessarily sending the entire representation
++ `jokeText: req.body.text || existingJoke.jokeText`: This line sets the jokeText property of replacementJoke. It looks for text property in the request body (req.body.text). If it's not present **(|| operator acts as a fallback)**, it uses the jokeText property from the existingJoke object, if available.
++ **fallback** mechanism provides an alternative or default option when the primary choice is not available or cannot be used.
+---
+#### DELETE Specific joke
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
