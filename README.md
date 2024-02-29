@@ -1,8 +1,8 @@
 
 
-  - [learn JavaScript](#learn-javascript)
-  - [ExpressJS](#express-js---todo-to-be-comleted)
-  - [Section 30: Build your own API](#section-30-build-your-own-api)
+- [learn JavaScript](#learn-javascript)
+  - [how to create an Object](#how-to-create-an-object)
+- [Section 33: PostgresSQL](#section-33-postgressql)
   
 
 
@@ -36,7 +36,7 @@
     ```
 
 
-# Express JS - TODO: To be comleted
+# Express JS - TODO
 + Useful resources
   + [body-parser](https://www.npmjs.com/package/body-parser): Node.js body parsing middleware.
 
@@ -45,6 +45,10 @@
     ```
     app.use(bodyParser.urlencoded({ extended: true }));
     ```
+
+
+# section 01: Front-End Web-Development TODO
+
 
 
 # Section 30: Build your own API
@@ -176,17 +180,128 @@ app.patch("/jokes/:id", (req, res) => {
 + `jokeText: req.body.text || existingJoke.jokeText`: This line sets the jokeText property of replacementJoke. It looks for text property in the request body (req.body.text). If it's not present **(|| operator acts as a fallback)**, it uses the jokeText property from the existingJoke object, if available.
 + **fallback** mechanism provides an alternative or default option when the primary choice is not available or cannot be used.
 ---
-#### DELETE Specific joke
+#### DELETE Specific joke - TODO
+
+
+
+# section 31: Databases - TODO
 
 
 
 
 
 
+# Section 32: SQL
++ useful resouces
+  + [w3School](https://www.w3schools.com/sql/)
+  + [SQL Playground](https://sqliteonline.com/#fiddle-5bbdbaef7288bo2ajn2wly03): used for practice only
 
 
+### CREATE TABLE Statementv
+
+```
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    column3 datatype,
+   ....
+);
+
+// sample
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (ID)
+);
+```
++ **Primary keys** must contain UNIQUE values, and cannot contain NULL values.
 
 
+### INSERT INTO Statement
+
+1.  Specify both the column names and the values to be inserted:
+```
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+```
+2.  If you are adding values for all the columns of the table, you do not need to specify the column names in the SQL query. However, make sure the order of the values is in the same order as the columns in the table. Here, the INSERT INTO syntax would be as follows:
+```
+INSERT INTO table_name
+VALUES (value1, value2, value3, ...);
+```
+
+### SELECT statement
+```
+SELECT column1, column2, ...
+FROM table_name;
+```
+
+### WHERE Clause
+```
+SELECT * FROM Customers
+WHERE Country='Mexico';
+```
++ The WHERE clause is used to filter records.
+
+### UPDATE Statement
+```
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+```
++ The UPDATE statement is used to modify the existing records in a table.
++ Be careful when updating records in a table! Notice the WHERE clause in the UPDATE statement. The WHERE clause specifies which record(s) that should be updated. If you omit the WHERE clause, all records in the table will be updated!
+
+### ALTER TABLE Statement
+The ALTER TABLE statement is used to add, delete, or modify columns in an existing table.
+
++ **ADD Column**
+  ```
+  ALTER TABLE table_name
+  ADD column_name datatype;
+  ```
++ **DROP COLUMN**
+  ```
+  ALTER TABLE table_name
+  DROP COLUMN column_name;
+  ```
++ **RENAME COLUMN**
+    ```
+    ALTER TABLE table_name
+    RENAME COLUMN old_name to new_name;
+    ```
+
+### DELETE Statement
++ The DELETE statement is used to delete existing records in a table.
++ Be careful when deleting records in a table! Notice the WHERE clause in the DELETE statement. The WHERE clause specifies which record(s) should be deleted. If you omit the WHERE clause, all records in the table will be deleted!
+  ```
+  DELETE FROM table_name WHERE condition;
+  ```
+
+### INNER JOIN
++ The INNER JOIN keyword selects records that have matching values in both tables.
+  ```
+  SELECT ProductID, ProductName, CategoryName
+  FROM Products
+  INNER JOIN Categories ON Products.CategoryID = Categories.CategoryID;
+  ```
+
+###  FOREIGN KEY Constraint
++ A FOREIGN KEY is a field (or collection of fields) in one table, that refers to the PRIMARY KEY in another table.
++ The table with the foreign key is called the child table, and the table with the primary key is called the referenced or parent table
+
+```
+  CREATE TABLE Orders (
+  OrderID int NOT NULL PRIMARY KEY,
+  OrderNumber int NOT NULL,
+  PersonID int FOREIGN KEY REFERENCES Persons(PersonID)
+);
+```
+
+
+# Section 33: PostgresSQL
 
 
 
