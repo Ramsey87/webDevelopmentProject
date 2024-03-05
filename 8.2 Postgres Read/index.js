@@ -8,14 +8,14 @@ const port = 3000;
 let totalCorrect = 0;
 
 const db = new pg.Client({
-  user: "postgres",
-  host: "localhost",
+  user: "postgres", // default user for postgres
+  host: "localhost", // default host for postgres
   database: "World",
   password: "Green1@3",
-  port: 5432,
+  port: 5432, // default port for postgres
 });
 
-db.connect();
+db.connect(); 
 db.query("SELECT * FROM capitals", (err, res) => {
   if (err) {
     console.error(err);
@@ -24,7 +24,7 @@ db.query("SELECT * FROM capitals", (err, res) => {
     console.log(res.rows);
     quiz = res.rows;
   }
-  db.end();  
+  db.end(); 
 });
 
 

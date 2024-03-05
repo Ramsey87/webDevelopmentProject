@@ -2,7 +2,6 @@
 
 - [learn JavaScript](#learn-javascript)
   - [how to create an Object](#how-to-create-an-object)
-- [Section 33: PostgresSQL](#section-33-postgressql)
   
 
 
@@ -302,6 +301,19 @@ The ALTER TABLE statement is used to add, delete, or modify columns in an existi
 
 
 # Section 33: PostgresSQL
+
+
+
+
++ inset into
+```
+insert into world_food (country, rice_production, wheat_production)
+values ('Italy', 1.46,7.3)
+```
+
++ how to create a tablle?
+
+
 
 
 
