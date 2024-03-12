@@ -1,49 +1,109 @@
 
 
-- [learn JavaScript](#learn-javascript)
-  - [how to create an Object](#how-to-create-an-object)
+
+- [NodeJS](#nodejs)
+- [ExpressJS](#express-js)
   
+---
 
-
-# learn JavaScript
-## how to create an Object
-1. **Object Literal**: You can define an object using object literal notation by enclosing key-value pairs within curly braces {}:
-    ```
-    let person = {
-        name: 'John',
-        age: 30,
-        isStudent: false
-    };
-    ```
-2. Using the **Object Constructor**: You can also create an object using the Object constructor:
-   
-    ```
-   let person = new Object();
-    person.name = 'John';
-    person.age = 30;
-    person.isStudent = false;
-   ```
-
-3. Using a **Constructor Function**: You can define a constructor function and then create objects using the new keyword:
-    ```
-    function Person(name, age, isStudent) {
-        this.name = name;
-        this.age = age;
-        this.isStudent = isStudent;
-    }
-    let person = new Person('John', 30, false);
-    ```
-
-
-# Express JS - TODO
+# NodeJs
++ it is a tool that lets developers use JavaScript to build powerful programs that run on computers, not just in web browsers. It's like a toolbox that helps programmers create fast and efficient websites and other types of software.
++ An ***asynchronous event-driven*** javaScrip ***runtime***, Node.js is designed to build scalable network applications
+  + ***JS Runtime***: The V8 engine is an open-source JavaScript engine developed by Google that is used in Node.js. It compiles JavaScript code into machine code, making it fast and efficient. The V8 engine is at the core of Node.js's performance and allows it to execute JavaScript code on the server-side.
+  + ***An asynchronous event-driven***:Node.js uses an event-driven architecture where operations are performed asynchronously. It uses an event loop to handle asynchronous operations by registering callbacks for events. When an event occurs, the corresponding callback is executed, allowing Node.js to handle multiple operations simultaneously without blocking.
++ Node commands
+  + ***Ctrl + C*** Exit Command
+  + ***npm install packagename*** installs a cpackage locally in your project
+  + ***np install -g packagename*** installs a package globally on your system
+  + ***node fileName*** run specific fileName
+  + ***npm init*** Initializes a new Node.js project and creates a package.json file.
++ NPM stands for ***Node Package Manager*** It is the default package manager for Node.js, and it is used to install, manage, and share packages (libraries or modules) of JavaScript code written for Node.js. npm is also used for managing project dependencies, running scripts, and publishing packages
+  + it is a community tool library. 
++ The ***package.json*** file in a Node.js project contains metadata about the project, including dependencies, scripts, and other configuration settings. It is used by npm to install dependencies, run scripts, and manage the project's lifecycle.
+  + In Node.js, the ***"type": "module"*** declaration is used in package.json to indicate that a JavaScript file should be treated as an ECMAScript module (ESM) rather than a CommonJS module. This declaration allows you to use ES6 module syntax, such as import and export, within your Node.js application.
+---
+ 
+# Express JS 
 + Useful resources
   + [body-parser](https://www.npmjs.com/package/body-parser): Node.js body parsing middleware.
+  + [nodemon](https://www.npmjs.com/package/nodemon) automatically restarting the node application when file changes in the directory are detected
+  ![EXPRESSJS](./READMEMD/ExpressJS.png)
++ Express.js is a powerful and flexible web application framework for Node.js, designed to simplify the process of building web applications and APIs
++ Core Concepts:
+  1. ***Routing***: One of the fundamental features of Express.js is routing. Routing refers to defining how an application responds to client requests at specific endpoints (URLs). Express.js provides methods to define routes for different HTTP methods like GET, POST, PUT, DELETE, etc. Routes are defined using HTTP methods and URL patterns.
+  2. ***Middleware***: Middleware functions are functions that have access to the request and response objects and can modify them, execute code, or end the request-response cycle. Middleware functions are essential for performing tasks like logging, parsing request bodies, handling authentication, and error handling. 
+  3. ***Template*** Engines: Express.js supports various template engines such as EJS to generate dynamic HTML content on the server-side. Template engines enable developers to create HTML templates with dynamic content that can be rendered using data passed from the server.
+  4. ***Error Handling***: Express.js provides built-in error handling mechanisms to catch and handle errors that occur during the request-response cycle.
++ There are four steps to create an Express.js application
+     1. install Express.js `npm install express`
+     2. Create an Application
+        ```
+        import express from "express";
+        const app = express();
+        ```
+     3. Define Routes
+        ```
+          app.get('/', (req, res) => {
+          res.send('Hello World!');
+          });
+        ```
+     4. Start Server 
+        ```
+        const PORT = 3000;
+        app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+          });
+        ```
++ **HTTP Requests**:
+  + ***GET*** request information from server
+  + ***POST*** sending a resource to server
+  + ***PUT*** update >> replace a resource - replace bicycle
+  + ***PATCH*** update>> patch a resource - send you only wheels
+  + ***DELET***
++ **the Request Object (req)**: The request object represents the data from the incoming request and is passed to all middleware and route handlers.
+  + ***req.headers*** object with the headers of the incoming request
+  + ***req.params*** object with any route params
+  + ***req.query*** object with any key/values from a url query string
+  + ***req.body*** object key/values of the request body (parsed by the express.urlencoded or express.json middleware)
+  + **req.method** the method of the request as string
+  
++ **The response object** is an object that is used to help author the response to the request. Primarily made up of helper functions for different types of responses.
+  + ***res.send*** will send a text, html or json request depending on what is passed to it
+  + ***res.json*** send a javascript object or array as a json response
+  + ***res.render*** renders an html response from a template
+  + ***res.status(code)*** Sets the HTTP status for the response. It is a chainable
++ **Routing**: Express.js provides methods to define routes for different HTTP methods and URL patterns. Routes are defined using methods like app.get(), app.post(), app.put(), app.delete(), etc. Route handlers are callback functions that execute when a route is matched. Route parameters can be used to extract data from the URL.
+```
+    app.get('/users/:id', (req, res) => {
+      const userId = req.params.id;
+      // Logic to fetch user data by ID
+      res.send(`User ID: ${userId}`);
+    });
+```
+
+
+
+
+
 
 + **Middleware** in the context of web development, particularly in frameworks like Express.js for Node.js, refers to ***functions that have access*** to the request object (req), the response object (res), and the next middleware function in the application's request-response cycle.
 + following line of code is used to use bodyParser middleware in express.js. `app.use()` is usedto mount middleware .
     ```
     app.use(bodyParser.urlencoded({ extended: true }));
     ```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # section 01: Front-End Web-Development TODO
@@ -316,8 +376,29 @@ values ('Italy', 1.46,7.3)
 
 
 
+```
+
+alter table visited_countires 
+add constraint country_code_user_id 
+unique (country_code, user_id)
+
+```
 
 
+```
+update users
+set name =  'Angelina'
+where id  = 3;
+```
+
+
+
+
+[SQL Practice](https://codefinity.com/start/sql?utm_source=google&utm_medium=cpc&utm_campaign=16805627028&utm_content=151854267577&utm_term=sql&gad_source=1&gclid=CjwKCAiA0bWvBhBjEiwAtEsoWzt8HmqGBr6OFTHFtnlRcF2j-R4pRMUoMPkGf3JrlI74ogw8EftuCxoC9fcQAvD_BwE)
+
+
++ send source file to me to work on it. 
++ 
 
 
 

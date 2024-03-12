@@ -22,6 +22,7 @@
   + Rules: variables can only contains: numbers, letters, $, _. Following is not accepted  ``` let jonas&Matila = "JM"```
   + Rules: variables with all letters uppercase are reserved for constants    ```let PI= 3.14```
   + Rules: Variables should be descriptive.  ```let myFirstJob = 'programmer';```
+  + you are allowed to declare multiple variable at the same time ``let x,y; ``
 
 + **Data Types**
   + values are either objects or Primitive data types
@@ -47,4 +48,17 @@
   + Assignment Operator: ***=***
     + ``x += 10   // x= x + 10`` 
     + ``x++  // x= x + 1`` 
-  + Comparison Operators:  >, <, >=, <= 
+  + **Comparison Operators**:  >, <, >=, <= 
++ [Operator Precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_precedence)
+
+
++ **Strings and Template Literals** - use back tick
+  ![](./JavaScript_Assets//StringTemplate.png)
+
++ **Type Conversion and Coerction**
+  + ***Type conversion*** in JavaScript involves explicitly converting a value from one data type to another. This can be done using various methods and functions such as ```String(), Number(), Boolean(),``` etc
+    ```
+    let num = 10;
+    let strNum = String(num); // num is converted to a string
+    console.log(typeof strNum); // Output: "string"
+    ```
