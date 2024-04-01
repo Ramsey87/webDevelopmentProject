@@ -1,0 +1,57 @@
+body {
+    background-color: #E8ECEF;
+}
+
+.centered {
+    padding-top: 200px;
+    text-align: center;
+}
+
+.secret-text {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    background-color: #000;
+}
+
+.table_Details {
+    border-collapse: collapse;
+    width: 75%;
+    /* Adjust the width as needed */
+    margin: auto;
+    background-color: lightgray;
+    /* Just for visibility */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Optional: Adds a shadow effect */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Collapse borders to avoid double borders */
+    margin-top: 20px;
+    /* Adjust margin as needed */
+    table-layout: fixed;
+    /* Ensure all columns have equal width */
+}
+
+tr {
+    border-bottom: 1px solid #ddd;
+    /* Add border bottom to each row */
+}
+
+td,
+th {
+    padding: 8px;
+    /* Adjust padding as needed */
+    text-align: left;
+    /* Adjust text alignment as needed */
+}
+
+.newGrade {
+    align-items: center;
+    margin-left: 50px;
+    padding: 20px;
+}
