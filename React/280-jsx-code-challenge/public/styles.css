@@ -1,0 +1,12 @@
+
+
+
+h1 {
+    background-color: aqua;
+}
+
+li{
+    background-color: brown;
+    display: grid;
+    gap: 5px;
+}
