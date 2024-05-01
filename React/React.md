@@ -1,4 +1,16 @@
 
+### what is react?
+- React is a popular JavaScript library for building user interfaces, particularly for web applications. It was developed by Facebook and later open-sourced. React allows developers to create reusable UI components and manage their state efficiently.
+- React is often used in conjunction with other tools and libraries, such as **Redux** for state management, **React Router** for routing within single-page applications, and **React Native** for building mobile applications.
+
+
+
+
+
+
+
+
+
 
 
 
@@ -23,3 +35,5 @@ while statements, There is a vide in coures rsources.
 
 
 - airbnb best practices.
+
+-import and expo [https://stackoverflow.com/questions/31354559/using-node-js-require-vs-es6-import-export]
