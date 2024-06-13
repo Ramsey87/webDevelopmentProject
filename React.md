@@ -155,17 +155,111 @@ export default Profile;
   `` import { function1, function2 } from './module' ``
 
 
+#### React props
+* Props are read-only data that is passed from a parent component to a child component.
+* **How to Use Props?**
+  * ***1- Passing Props to Child Components:*** Props are passed to child components as attributes in the JSX syntax
+    ```
+      function ParentComponent() {
+        return <ChildComponent name="John" age={30} />;
+      }
+    ```
+  * The child component can access the props using the props object
+    ```
+    function ChildComponent(props) {
+      return (
+        <div>
+            <p>Name: {props.name}</p>
+            <p>Age: {props.age}</p>
+        </div>
+      );
+    }
+    ```
+* Default props
 
+---
+### Explore Map(), Filter(), Reduce(), Find() & FindIndex()
 
+#### map() 
+* creates a new array by doing something with each item in an array
+* it is very common specially when you want to render lists of elements 
+* **key prop**: In React, each child in a list should have a unique "key" prop. This helps React identify which items have changed, are added, or are removed. It's recommended to use a unique identifier rather than the index if available.
+* **key** is special keywork and if you want to print it, you need to use anther keyworkd
 
+  ```
+  import React from 'react';
 
+  function Item({ name }) {
+    return <li>{name}</li>;
+  }
 
+  function ItemList() {
+    const items = [
+      { id: 1, name: 'Apple' },
+      { id: 2, name: 'Banana' },
+      { id: 3, name: 'Cherry' },
+      { id: 4, name: 'Date' },
+      { id: 5, name: 'Elderberry' },
+    ];
 
+    return (
+      <ul>
+        {items.map(item => (
+          <Item key={item.id} name={item.name} />
+        ))}
+      </ul>
+    );
+  }
 
+  export default ItemList;
+  ```
 
+#### Filter
+* ***Creates*** a new array by by keeping the items that returns true
+  ```
+  const numbers = [1, 2, 3, 4, 5, 6];
+  const evenNumbers = numbers.filter(num => num % 2 === 0);
+  console.log(evenNumbers); // Output: [2, 4, 6]
+  ```
 
---------
+#### Reduce
+* is used to reduce an array to a single value by executing a provided function for each value of the array (from left to right). The result of each function call is passed to the next function call.
 
+  ```
+  const numbers = [1, 2, 3, 4, 5];
+  const sum = numbers.reduce((acc, cur) => acc + cur);
+  console.log(sum); // Output: 15
+  ```
+#### Find
+* find the ***first item*** that matches from an array
+  * using arrow function
+    ```
+    const numbers = [1, 2, 3, 4, 5];
+    const found = numbers.find(element => element > 3);
+    console.log(found); // Output: 4
+    ```
+  * finding an object in an array
+    ```
+      const inventory = [
+          { name: 'apples', quantity: 2 },
+          { name: 'bananas', quantity: 0 },
+          { name: 'cherries', quantity: 5 }
+      ];
+
+      const result = inventory.find(item => item.name === 'cherries');
+      console.log(result);
+      // Output: { name: 'cherries', quantity: 5 }
+      ```
+#### FindIndex
+* find the ***index*** of the ***first*** item that matches
+  ```
+  const numbers = [1, 2, 3, 4, 5];
+  const index = numbers.findIndex(element => element > 3);
+  console.log(index); // Output: 3
+  ```
+  
+
+----
 
 - use hoook
   - usestate() sets initial state
@@ -184,7 +278,6 @@ export default Profile;
 
 
 
-- read about map
 
 
 - style propoery requires a object in jsx
@@ -198,7 +291,6 @@ export default Profile;
 - airbnb best practices.
 
 -import and expo [https://stackoverflow.com/questions/31354559/using-node-js-require-vs-es6-import-export]
-- read about map in Javascript
 - waht is functional programming? mapping inside maping.
 - how to write functions
   - normal function function nameofFunction() { }
@@ -211,3 +303,51 @@ export default Profile;
 -  
 
 - read artickes in resources. 
+
+
+___
+## react with Mosh
+
+* vanilla JS: 
+* Tsx: 
+* learn typescript. learn this in future. 
+* ctlrl + N + P> moves to a new files
+* ctrl + D to select different items
+* when using the map, we need to have a key as a prop, that is what is demanding from react. and should be unique.
+* write different ternary operation
+  ```
+  {countries.length === 0 ? <p>No item found</p> : null}
+  {countries.length === 0 && <p>No item found</p>}
+  ```
+
+  *Event handling. Done
+  * managing stgatges
+
+* props (passdin data)>> created an interface, updated module based on interface, passed data at App level
+*  props for functions. 
+*  using childern prop we can send pass childer and use ReactNode to pass HTML inside the component
+*  use react dev tool extension 
+*  ? shows it is optional
+
+```
+interface buttonProp {
+    children: string
+    color?:string
+    onClick: () => void
+}
+```
+
+defullt value
+
+```
+const Button = ({children,onClick,color="primary"}:buttonProp) => {
+  return (
+    <button type="button" className={'btn btn-'+ color} onClick={onClick}>{children}</button>
+  )
+}
+```
+
+* onchange is used for fileds
+*  event.target.value    / event.target.placeholder   
+*  read about controlled component on page 311.
+*  defautl behaviour of form is to refresh and use event.preventDefault()

@@ -5,7 +5,7 @@
   + programing language: needs a computer to do things
   + multi-paradigm: we can use different styles of programming
 
-####javaScript Releases
+#### javaScript Releases
 ![Release](./JavaScript_Assets/javascript_releases.png)
 
 + how to add link JS to HTML
@@ -62,3 +62,47 @@
     let strNum = String(num); // num is converted to a string
     console.log(typeof strNum); // Output: "string"
     ```
+
+#### Map
+* The map() method is used to transform arrays by applying a function to each element.
+* It returns a new array, leaving the original array unchanged.
+* You can use the current element, its index, and the whole array within the callback function.
+* ***Basic Example:*** In this example, map takes a function that multiplies each element by 2 and applies it to each element of the numbers array. The result is a new array doubled
+  ```
+  const numbers = [1, 2, 3, 4, 5];
+  const doubled = numbers.map(number => number * 2);
+  console.log(doubled); // Output: [2, 4, 6, 8, 10]
+  ```
+
+  * ***Using with Index and Array:*** You can also use the index and the original array in your callback function if needed:
+  ```
+  const numbers = [1, 2, 3, 4, 5];
+  const detailed = numbers.map((number, index) => `Index ${index}: ${number}`);
+
+  console.log(detailed); 
+  // Output: ["Index 0: 1", "Index 1: 2", "Index 2: 3", "Index 3: 4", "Index 4: 5"]
+  ```
+
+  ----
+
+  #### Functions
+
+  * **Named Functions**: a function that has a name when it is defined
+    ```
+    function sayHello() {
+        console.log('Hello!');
+    }
+    ```
+
+  * **Anonymous Functions**: An anonymous function is a function without a name. They are often assigned to variables or used as arguments to other functions.
+    ```
+      const greet = function() {
+      console.log('Hello!');
+        };
+    ```
+  
+  * **Arrow Functions**: Introduced in ES6, arrow functions provide a shorter syntax for writing functions. They do not have their own this context and are often used for callbacks and functional programming.
+    ```
+      const add = (a, b) => a + b;
+    ```
+
