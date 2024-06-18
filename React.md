@@ -257,9 +257,74 @@ export default Profile;
   const index = numbers.findIndex(element => element > 3);
   console.log(index); // Output: 3
   ```
-  
-
 ----
+### Ternary Operator for conditional rendering
+* everything that goes inside {} must be expressions while if-condition is statement.
+* The syntax of the ternary operator is:
+`` condition ? expressionIfTrue : expressionIfFalse``
+* **Basic Conditional Rending**
+  ```
+  import React from 'react';
+
+  function Greeting(props) {
+      return (
+          <div>
+              {props.isLoggedIn ? (
+                  <h1>Welcome back!</h1>
+              ) : (
+                  <h1>Please sign up.</h1>
+              )}
+          </div>
+      );
+  }
+
+  export default Greeting;
+  ```
+  * **Conditional Rendering with Multiple Conditions**
+  ```
+  import React from 'react';
+
+  function UserStatus(props) {
+      return (
+          <div>
+              {props.isLoading ? (
+                  <p>Loading...</p>
+              ) : props.isLoggedIn ? (
+                  <p>Welcome back, {props.username}!</p>
+              ) : (
+                  <p>Please log in.</p>
+              )}
+          </div>
+      );
+  }
+
+  export default UserStatus;
+
+  ```
+  Here, UserStatus component first checks if isLoading is true. If it is, it renders "Loading...". If isLoading is false, it then checks isLoggedIn and renders the appropriate message.
+* ***Using && in React***: The logical AND operator (&&) can be used to conditionally render elements. It works by evaluating the left-hand side expression first; if it evaluates to true, the right-hand side expression is returned and rendered. If it evaluates to false, the right-hand side expression is ignored.
+  ```
+  import React from 'react';
+
+  function Greeting(props) {
+      return (
+          <div>
+              {props.isLoggedIn && <h1>Welcome back!</h1>}
+          </div>
+      );
+  }
+
+  export default Greeting;
+  ```
+___
+
+
+
+
+
+
+
+
 
 - use hoook
   - usestate() sets initial state
@@ -292,20 +357,11 @@ export default Profile;
 
 -import and expo [https://stackoverflow.com/questions/31354559/using-node-js-require-vs-es6-import-export]
 - waht is functional programming? mapping inside maping.
-- how to write functions
-  - normal function function nameofFunction() { }
-  - anynoumous function function () {  }
-  - arrow function  (x,y)=>{}
-    - or x =>{}
-  - if ther eis only one row x=> x*x   - this is more advance
 - what is fat arrow?
 -  there is a good formula. learn it. make in annoumymous   >> remove function and add fat arrow  >>> look at return,if not multiple line. if theree is only one param or more than one?
--  
 
 - read artickes in resources. 
 
-
-___
 ## react with Mosh
 
 * vanilla JS: 

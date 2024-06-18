@@ -62,7 +62,7 @@
     let strNum = String(num); // num is converted to a string
     console.log(typeof strNum); // Output: "string"
     ```
-
+---
 #### Map
 * The map() method is used to transform arrays by applying a function to each element.
 * It returns a new array, leaving the original array unchanged.
@@ -105,4 +105,5 @@
     ```
       const add = (a, b) => a + b;
     ```
+---
 

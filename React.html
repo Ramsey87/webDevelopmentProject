@@ -1,0 +1,475 @@
+<!DOCTYPE html><html><head>
+      <title>React</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\morte\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.13\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h3 id="what-is-react">what is react? </h3>
+<ul>
+<li>React is a popular JavaScript library for building user interfaces, particularly for web applications. It was developed by Facebook and later open-sourced. React allows developers to create reusable UI components and manage their state efficiently.</li>
+<li>React is often used in conjunction with other tools and libraries, such as <strong>Redux</strong> for state management, <em><strong>React Router</strong></em> for routing within single-page applications, and <em><strong>React Native</strong></em> for building mobile applications.</li>
+</ul>
+<h4 id="local-set-up">Local Set up </h4>
+<ul>
+<li><code>npm create vite@latest my-react-app --template react</code></li>
+<li><code>npm install</code></li>
+<li><code>npm run dev</code></li>
+</ul>
+<h4 id="jsx-and-babel">JSX and Babel </h4>
+<ul>
+<li>JSX (JavaScript XML) is a syntax extension for JavaScript often used with React. It allows you to <em><strong>write HTML-like code</strong></em> within JavaScript, making it easier to describe the structure of UI components.
+<ul>
+<li>we are also able to insert javascript into html called temlate literals</li>
+</ul>
+</li>
+<li>Babel is a JavaScript compiler that converts modern JavaScript code (including JSX) into backward-compatible versions of JavaScript that can run in older browsers. It allows developers to use the latest features of JavaScript without worrying about compatibility issues.</li>
+</ul>
+<h4 id="indexjsx">index.jsx </h4>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>import react from "react";
+import reactDOM from "react-dom"
+
+reactDOM.render(
+    &lt;div&gt;
+        &lt;p&gt;Created by {userName}&lt;/p&gt;
+        &lt;p&gt;Copyright {curentYear}&lt;/p&gt;
+    &lt;/div&gt;
+    , document.getElementById("root")
+)
+</code></pre><ul>
+<li>render method will take only one element. in case of multiple element, we need to embed html element into a single dev.</li>
+<li>inseting html attributes should be in camel case. for instance
+<ul>
+<li>contenteditable into contentEditable</li>
+<li>class into className</li>
+</ul>
+</li>
+<li>In React applications, when you see the line <code>import React from "react";</code>, it's usually included at the top of a JavaScript file where JSX syntax is used. This import statement brings in the functionality of React library into your current file.</li>
+<li><em><strong>Template literals</strong></em> in JSX are features of javaScript
+<ul>
+<li>inserting JS expression in react use {}. you cannt have JS statements. expression: will be evaluated to a value and ends up with a value<pre data-role="codeBlock" data-info="" class="language-text"><code>const name = "John";
+const greeting = `Hello, ${name}!`;
+
+const element = &lt;div&gt;{greeting}&lt;/div&gt;;
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h4 id="adding-attributes-to-jsx-elements">Adding attributes to JSX elements </h4>
+<ul>
+<li>JSX elements can have attributes, just like HTML elements.</li>
+<li>Some attributes are different than their HTML counterparts. For example, the class attribute in HTML translates to className in JSX. This is because class is a reserved word in JavaScript, and JSX is a JavaScript extension. If you wanted to add a primary class to your button, you'd write it like this:<pre data-role="codeBlock" data-info="" class="language-text"><code>&lt;button type="button" className="primary"&gt;
+    Click me!
+&lt;/button&gt;
+</code></pre></li>
+</ul>
+<h4 id="html-boilerplate">html boilerplate </h4>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>  &lt;!DOCTYPE html&gt;
+  &lt;html lang="en"&gt;
+    &lt;head&gt;
+      &lt;title&gt;React App&lt;/title&gt;
+      &lt;link rel="stylesheet" href="/styles.css" /&gt;
+    &lt;/head&gt;
+    
+    &lt;body&gt;
+      &lt;div id="root"&gt;&lt;/div&gt;
+      &lt;script type="module" src="/src/index.jsx"&gt;&lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h4 id="utilizing-inline-styling-in-jsx">Utilizing Inline Styling in JSX </h4>
+<p>When it comes to incorporating inline styling in JSX files, a common approach involves employing JavaScript objects to define styles, which are then applied directly to JSX elements. Here are some key considerations:</p>
+<ul>
+<li>
+<p><strong>Applying Styles</strong>: Inline styling entails defining styles using JavaScript objects and subsequently applying them via the style attribute directly within JSX elements.</p>
+</li>
+<li>
+<p><strong>Property Syntax</strong>: Unlike standard HTML, where styles are typically specified using strings, JSX requires the use of objects for styling. The keys within these objects adhere to <em><strong>camelCased</strong></em> CSS property names.</p>
+</li>
+<li>
+<p><strong>Best Practices</strong>: While inline styles offer simplicity for basic or isolated styling needs, it's advisable to exercise caution when using them for complex styling logic. Overuse of inline styles can clutter JSX code and hinder readability and maintainability. For more intricate styling requirements, leveraging CSS-in-JS libraries like styled-components or CSS modules can provide a more organized and scalable approach.</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>import React from 'react';
+
+const MyComponent = () =&gt; {
+  // Define inline styles
+  const styles = {
+    container: {
+      backgroundColor: 'lightblue',
+      padding: '20px',
+    },
+    text: {
+      color: 'red',
+      fontSize: '16px',
+    },
+  };
+
+  return (
+    &lt;div style={styles.container}&gt;
+      &lt;p style={styles.text}&gt;Inline styling example&lt;/p&gt;
+    &lt;/div&gt;
+  );
+};
+
+export default MyComponent;
+</code></pre><h4 id="react-components">React Components </h4>
+<p>In React, components are the building blocks of user interfaces. They are reusable, self-contained pieces of code that encapsulate a part of the UI's functionality. Components can be as simple as a button or as complex as an entire page.<br>
+<strong>Building a React Component: Step-by-Step Guide</strong></p>
+<ol>
+<li><strong>Export the component</strong>
+<ul>
+<li>Utilize the <em><strong>export default</strong></em> syntax, a standard JavaScript convention, to designate the primary function within a file for easy importation into other modules.</li>
+</ul>
+</li>
+<li><strong>Define the function</strong>
+<ul>
+<li>With <em><strong>function Profile() { }</strong></em> you define a JavaScript function with the name Profile.</li>
+<li>React components are regular JavaScript functions, but <em><strong>their names must start with a capital letter or they won’t work!</strong></em></li>
+</ul>
+</li>
+<li><strong>Add markup</strong>
+<ul>
+<li>Without parentheses, any code on the lines after return will be ignored!</li>
+</ul>
+</li>
+</ol>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>import React from 'react';
+
+// Step 1: Export the component
+const Profile = () =&gt; {
+// Step 3: Add markup
+return (
+  &lt;div&gt;
+    &lt;img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" /&gt;
+  &lt;/div&gt;
+);
+};
+
+export default Profile;
+
+</code></pre><h4>Importing and Exporting Components</h4>
+<ol>
+<li>
+<p><strong>Default Export</strong><br>
+The default export allows you to export a single value (function, class, object) from a module. When importing a default export, you can <em><strong>choose any name</strong></em> for it.</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>// Exporting a function as default
+export default function myFunction() {
+  // function body
+  }
+</code></pre><p>when importing<br>
+<code>import myFunction from './module';</code></p>
+</li>
+<li>
+<p><strong>Named Export</strong><br>
+Named exports allow you to export multiple values (functions, variables, objects) from a module. Each named export must be imported with the exact name it was exported with.<br>
+<code> export { value1, value2, ... };</code><br>
+or</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>   // Exporting multiple functions
+ export function function1() {
+   // function1 body
+ }
+
+ export function function2() {
+   // function2 body
+ }
+</code></pre><p>when importing<br>
+<code>import { function1, function2 } from './module'</code></p>
+</li>
+</ol>
+<h4 id="react-props">React props </h4>
+<ul>
+<li>Props are read-only data that is passed from a parent component to a child component.</li>
+<li><strong>How to Use Props?</strong>
+<ul>
+<li><em><strong>1- Passing Props to Child Components:</strong></em> Props are passed to child components as attributes in the JSX syntax<pre data-role="codeBlock" data-info="" class="language-text"><code>  function ParentComponent() {
+    return &lt;ChildComponent name="John" age={30} /&gt;;
+  }
+</code></pre></li>
+<li>The child component can access the props using the props object<pre data-role="codeBlock" data-info="" class="language-text"><code>function ChildComponent(props) {
+  return (
+    &lt;div&gt;
+        &lt;p&gt;Name: {props.name}&lt;/p&gt;
+        &lt;p&gt;Age: {props.age}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+</code></pre></li>
+</ul>
+</li>
+<li>Default props</li>
+</ul>
+<hr>
+<h3 id="explore-map-filter-reduce-find--findindex">Explore Map(), Filter(), Reduce(), Find() &amp; FindIndex() </h3>
+<h4 id="map">map() </h4>
+<ul>
+<li>
+<p>creates a new array by doing something with each item in an array</p>
+</li>
+<li>
+<p>it is very common specially when you want to render lists of elements</p>
+</li>
+<li>
+<p><strong>key prop</strong>: In React, each child in a list should have a unique "key" prop. This helps React identify which items have changed, are added, or are removed. It's recommended to use a unique identifier rather than the index if available.</p>
+</li>
+<li>
+<p><strong>key</strong> is special keywork and if you want to print it, you need to use anther keyworkd</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>import React from 'react';
+
+function Item({ name }) {
+  return &lt;li&gt;{name}&lt;/li&gt;;
+}
+
+function ItemList() {
+  const items = [
+    { id: 1, name: 'Apple' },
+    { id: 2, name: 'Banana' },
+    { id: 3, name: 'Cherry' },
+    { id: 4, name: 'Date' },
+    { id: 5, name: 'Elderberry' },
+  ];
+
+  return (
+    &lt;ul&gt;
+      {items.map(item =&gt; (
+        &lt;Item key={item.id} name={item.name} /&gt;
+      ))}
+    &lt;/ul&gt;
+  );
+}
+
+export default ItemList;
+</code></pre></li>
+</ul>
+<h4 id="filter">Filter </h4>
+<ul>
+<li><em><strong>Creates</strong></em> a new array by by keeping the items that returns true<pre data-role="codeBlock" data-info="" class="language-text"><code>const numbers = [1, 2, 3, 4, 5, 6];
+const evenNumbers = numbers.filter(num =&gt; num % 2 === 0);
+console.log(evenNumbers); // Output: [2, 4, 6]
+</code></pre></li>
+</ul>
+<h4 id="reduce">Reduce </h4>
+<ul>
+<li>
+<p>is used to reduce an array to a single value by executing a provided function for each value of the array (from left to right). The result of each function call is passed to the next function call.</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((acc, cur) =&gt; acc + cur);
+console.log(sum); // Output: 15
+</code></pre></li>
+</ul>
+<h4 id="find">Find </h4>
+<ul>
+<li>find the <em><strong>first item</strong></em> that matches from an array
+<ul>
+<li>using arrow function<pre data-role="codeBlock" data-info="" class="language-text"><code>const numbers = [1, 2, 3, 4, 5];
+const found = numbers.find(element =&gt; element &gt; 3);
+console.log(found); // Output: 4
+</code></pre></li>
+<li>finding an object in an array<pre data-role="codeBlock" data-info="" class="language-text"><code>  const inventory = [
+      { name: 'apples', quantity: 2 },
+      { name: 'bananas', quantity: 0 },
+      { name: 'cherries', quantity: 5 }
+  ];
+
+  const result = inventory.find(item =&gt; item.name === 'cherries');
+  console.log(result);
+  // Output: { name: 'cherries', quantity: 5 }
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<h4 id="findindex">FindIndex </h4>
+<ul>
+<li>find the <em><strong>index</strong></em> of the <em><strong>first</strong></em> item that matches<pre data-role="codeBlock" data-info="" class="language-text"><code>const numbers = [1, 2, 3, 4, 5];
+const index = numbers.findIndex(element =&gt; element &gt; 3);
+console.log(index); // Output: 3
+</code></pre></li>
+</ul>
+<hr>
+<h3 id="ternary-operator-for-conditional-rendering">Ternary Operator for conditional rendering </h3>
+<ul>
+<li>everything that goes inside {} must be expressions while if-condition is statement.</li>
+<li>The syntax of the ternary operator is:<br>
+<code> condition ? expressionIfTrue : expressionIfFalse</code></li>
+<li><strong>Basic Conditional Rending</strong><pre data-role="codeBlock" data-info="" class="language-text"><code>import React from 'react';
+
+function Greeting(props) {
+    return (
+        &lt;div&gt;
+            {props.isLoggedIn ? (
+                &lt;h1&gt;Welcome back!&lt;/h1&gt;
+            ) : (
+                &lt;h1&gt;Please sign up.&lt;/h1&gt;
+            )}
+        &lt;/div&gt;
+    );
+}
+
+export default Greeting;
+</code></pre><ul>
+<li><strong>Conditional Rendering with Multiple Conditions</strong></li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>import React from 'react';
+
+function UserStatus(props) {
+    return (
+        &lt;div&gt;
+            {props.isLoading ? (
+                &lt;p&gt;Loading...&lt;/p&gt;
+            ) : props.isLoggedIn ? (
+                &lt;p&gt;Welcome back, {props.username}!&lt;/p&gt;
+            ) : (
+                &lt;p&gt;Please log in.&lt;/p&gt;
+            )}
+        &lt;/div&gt;
+    );
+}
+
+export default UserStatus;
+
+</code></pre>Here, UserStatus component first checks if isLoading is true. If it is, it renders "Loading...". If isLoading is false, it then checks isLoggedIn and renders the appropriate message.</li>
+<li><em><strong>Using &amp;&amp; in React</strong></em>: The logical AND operator (&amp;&amp;) can be used to conditionally render elements. It works by evaluating the left-hand side expression first; if it evaluates to true, the right-hand side expression is returned and rendered. If it evaluates to false, the right-hand side expression is ignored.<pre data-role="codeBlock" data-info="" class="language-text"><code>import React from 'react';
+
+function Greeting(props) {
+    return (
+        &lt;div&gt;
+            {props.isLoggedIn &amp;&amp; &lt;h1&gt;Welcome back!&lt;/h1&gt;}
+        &lt;/div&gt;
+    );
+}
+
+export default Greeting;
+</code></pre></li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>use hoook</p>
+<ul>
+<li>usestate() sets initial state</li>
+<li><code> const [time, setTime] = useState()</code> set the time as zero and give you back time. settime is a method can be called.</li>
+</ul>
+</li>
+<li>
+<p>style propoery requires a object in jsx</p>
+</li>
+<li>
+<p>it is useful in certain cases when components change on the fly,. for exampel style changes when ou have new timing.</p>
+</li>
+<li>
+<p>in font-size will be in fontSize in an object.</p>
+</li>
+<li>
+<p>learn more about Date(). you can also enter date inside it and mimic data.</p>
+</li>
+<li>
+<p>airbnb best practices.</p>
+</li>
+</ul>
+<p>-import and expo [<a href="https://stackoverflow.com/questions/31354559/using-node-js-require-vs-es6-import-export">https://stackoverflow.com/questions/31354559/using-node-js-require-vs-es6-import-export</a>]</p>
+<ul>
+<li>
+<p>waht is functional programming? mapping inside maping.</p>
+</li>
+<li>
+<p>what is fat arrow?</p>
+</li>
+<li>
+<p>there is a good formula. learn it. make in annoumymous   &gt;&gt; remove function and add fat arrow  &gt;&gt;&gt; look at return,if not multiple line. if theree is only one param or more than one?</p>
+</li>
+<li>
+<p>read artickes in resources.</p>
+</li>
+</ul>
+<h2 id="react-with-mosh">react with Mosh </h2>
+<ul>
+<li>
+<p>vanilla JS:</p>
+</li>
+<li>
+<p>Tsx:</p>
+</li>
+<li>
+<p>learn typescript. learn this in future.</p>
+</li>
+<li>
+<p>ctlrl + N + P&gt; moves to a new files</p>
+</li>
+<li>
+<p>ctrl + D to select different items</p>
+</li>
+<li>
+<p>when using the map, we need to have a key as a prop, that is what is demanding from react. and should be unique.</p>
+</li>
+<li>
+<p>write different ternary operation</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>{countries.length === 0 ? &lt;p&gt;No item found&lt;/p&gt; : null}
+{countries.length === 0 &amp;&amp; &lt;p&gt;No item found&lt;/p&gt;}
+</code></pre><p>*Event handling. Done</p>
+<ul>
+<li>managing stgatges</li>
+</ul>
+</li>
+<li>
+<p>props (passdin data)&gt;&gt; created an interface, updated module based on interface, passed data at App level</p>
+</li>
+<li>
+<p>props for functions.</p>
+</li>
+<li>
+<p>using childern prop we can send pass childer and use ReactNode to pass HTML inside the component</p>
+</li>
+<li>
+<p>use react dev tool extension</p>
+</li>
+<li>
+<p>? shows it is optional</p>
+</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>interface buttonProp {
+    children: string
+    color?:string
+    onClick: () =&gt; void
+}
+</code></pre><p>defullt value</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>const Button = ({children,onClick,color="primary"}:buttonProp) =&gt; {
+  return (
+    &lt;button type="button" className={'btn btn-'+ color} onClick={onClick}&gt;{children}&lt;/button&gt;
+  )
+}
+</code></pre><ul>
+<li>onchange is used for fileds</li>
+<li>event.target.value    / event.target.placeholder</li>
+<li>read about controlled component on page 311.</li>
+<li>defautl behaviour of form is to refresh and use event.preventDefault()</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
